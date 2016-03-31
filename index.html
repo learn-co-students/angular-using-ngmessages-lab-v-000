@@ -47,13 +47,28 @@
           <h5>Register</h5>
 
           <form name="form">
+          
+            <div>
               <label>Username</label>
 
-              <input
-                  name="username"
-                  minlength="2"
-                  ng-model="ctrl.username"
-                  required="required" />
+                <input
+                    name="username"
+                    minlength="2"
+                    ng-model="ctrl.username"
+                    required="required" />
+                <div ng-if="form.username.$touched">
+                  <div ng-messages="form.username.$error">
+                    <div ng-message="required">
+                      Username is required!
+                    </div>
+                    <div ng-message="minlength">
+                      Username must be 2 chars!
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <div>
 
               <label>Password</label>
 
@@ -64,6 +79,20 @@
                   ng-model="ctrl.password"
                   required="required" />
 
+              <div ng-if="form.password.$touched">
+                <div ng-messages="form.password.$error">
+                  <div ng-message="required">
+                    Password is required!
+                  </div>
+                  <div ng-message="minlength">
+                    Password must be at least 8 chars!
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div>
               <label>Email</label>
 
               <input
@@ -72,6 +101,21 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+
+              <div ng-if="form.email.$touched">
+                <div ng-messages="form.email.$error">
+                  <div ng-message="required">
+                    Email is required!
+                  </div>
+                  <div ng-message="minlength">
+                    email must be at least 2 chars!
+                  </div>
+                  <div ng-message="email">
+                    Email must be valid!
+                  </div>
+                </data>
+              </div>
+            </div>
           </form>
       </div>
   </div>
@@ -79,6 +123,7 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
+    <script src="js/app/controllers/FormController.js"></script>
 
 </body>
 </html>
