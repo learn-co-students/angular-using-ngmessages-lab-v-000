@@ -10,7 +10,6 @@
         body {
             font-family: "Helvetica Neue", Verdana, sans-serif;
         }
-
         table {
             border-collapse: collapse;
             width: 100%;
@@ -18,7 +17,6 @@
             border-radius: 5px;
             margin: 50px 0;
         }
-
         input {
             font-size: 16px;
             padding: 5px 7px;
@@ -30,11 +28,9 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             color: rgba(0, 0, 0, 0.8);
         }
-
         tr:not(:last-of-type) {
             border-bottom: 1px solid map-get($border-color, light);
         }
-
         td {
             padding: 16px 12px 14px;
         }
@@ -43,7 +39,7 @@
 <body>
 
   <div ng-app="app" class="app">
-      <div ng-controller="FormController as ctrl">
+      <div >
           <h5>Register</h5>
 
           <form name="form">
@@ -51,9 +47,14 @@
 
               <input
                   name="username"
+                  type="text"
                   minlength="2"
                   ng-model="ctrl.username"
                   required="required" />
+              <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                <div ng-message="required">A username is required!</div>
+                <div ng-message="minlength">username must be at least 2 characters!</div>
+              </div>
 
               <label>Password</label>
 
@@ -63,6 +64,10 @@
                   minlength="8"
                   ng-model="ctrl.password"
                   required="required" />
+              <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                <div ng-message="required">A password is required!</div>
+                <div ng-message="minlength">password must be at least 8 characters!</div>
+              </div>
 
               <label>Email</label>
 
@@ -72,6 +77,11 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                <div ng-message="required">A email is required!</div>
+                <div ng-message="minlength">email must be at least 2 characters!</div>
+                <div ng-message="email">Please enter a valid email!</div>
+              </div>
           </form>
       </div>
   </div>
@@ -81,4 +91,3 @@
     <script src="js/app/app.js"></script>
 
 </body>
-</html>
