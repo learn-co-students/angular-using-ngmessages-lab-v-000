@@ -13,7 +13,7 @@ describe('Events Test', function() {
 		it('should make sure the username is required', function() {
 			username.click();
 			element(by.css('body')).click();
-			expect(messages.getText()).toContain('required');
+			expect(messages.getText()).toContain('Required');
 		});
 
 		it('should make sure the username is more than 2 characters', function() {
@@ -35,7 +35,7 @@ describe('Events Test', function() {
 		it('should make sure the password is required', function() {
 			password.click();
 			element(by.css('body')).click();
-			expect(messages.getText()).toContain('required');
+			expect(messages.getText()).toContain('Required');
 		});
 
 		it('should make sure the password is more than 8 characters', function() {
@@ -57,7 +57,7 @@ describe('Events Test', function() {
 		it('should make sure the email is required', function() {
 			email.click();
 			element(by.css('body')).click();
-			expect(messages.getText()).toContain('required');
+			expect(messages.getText()).toContain('Required');
 		});
 
 		it('should make sure the email is valid', function() {
