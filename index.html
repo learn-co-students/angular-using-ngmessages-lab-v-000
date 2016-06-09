@@ -10,7 +10,6 @@
         body {
             font-family: "Helvetica Neue", Verdana, sans-serif;
         }
-
         table {
             border-collapse: collapse;
             width: 100%;
@@ -18,7 +17,6 @@
             border-radius: 5px;
             margin: 50px 0;
         }
-
         input {
             font-size: 16px;
             padding: 5px 7px;
@@ -30,11 +28,9 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             color: rgba(0, 0, 0, 0.8);
         }
-
         tr:not(:last-of-type) {
             border-bottom: 1px solid map-get($border-color, light);
         }
-
         td {
             padding: 16px 12px 14px;
         }
@@ -48,30 +44,43 @@
 
           <form name="form">
               <label>Username</label>
-
               <input
                   name="username"
+                  type="text"
                   minlength="2"
                   ng-model="ctrl.username"
                   required="required" />
+              <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                <div ng-message="required">Required field</div>
+                <div ng-message="minlength">Minimum length: 2</div>
+              </div>
+              <br>
 
               <label>Password</label>
-
               <input
                   name="password"
                   type="password"
                   minlength="8"
                   ng-model="ctrl.password"
                   required="required" />
+              <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                <div ng-message="required">Required field</div>
+                <div ng-message="minlength">Minimum length: 8</div>
+              </div>
+              <br>
 
               <label>Email</label>
-
               <input
                   name="email"
                   type="email"
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                <div ng-message="required">Required field</div>
+                <div ng-message="email">Must be valid email</div>
+              </div>
+              <br>
           </form>
       </div>
   </div>
@@ -79,7 +88,7 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/FormController.js></script>"
+    <script src="js/app/controllers/FormController.js"></script>
 
 </body>
 </html>
