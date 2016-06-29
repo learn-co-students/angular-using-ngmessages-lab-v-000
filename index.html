@@ -86,7 +86,7 @@
               <div ng-messages="form.email.$error" ng-if="form.email.$touched">
                 <div ng-message="required">Email is required.</div>
                 <div ng-message="minlength">Email must be at least 2 characters.</div>
-                <div ng-if="form.email.$invalid">Password is invalid.</div>
+                <div ng-message="email">Password is invalid.</div>
               </div>
                   
           </form>
