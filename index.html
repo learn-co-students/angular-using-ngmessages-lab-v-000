@@ -43,43 +43,59 @@
 <body>
 
   <div ng-app="app" class="app">
-      <div ng-controller="FormController as ctrl">
-          <h5>Register</h5>
+        <div ng-controller="FormController as ctrl">
+            <h5>Register</h5>
 
-          <form name="form">
-              <label>Username</label>
+            <form name="form">
+                <label>Username</label>
 
-              <input
-                  name="username"
-                  minlength="2"
-                  ng-model="ctrl.username"
-                  required="required" />
+                <input
+                    name="username"
+                    minlength="2"
+                    ng-model="ctrl.username"
+                    required="required" />
 
-              <label>Password</label>
+                <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                    <div ng-message="required">Username is required!</div>
+                    <div ng-message="minlength">Must be more than 2 characters!</div>
+                </div>
 
-              <input
-                  name="password"
-                  type="password"
-                  minlength="8"
-                  ng-model="ctrl.password"
-                  required="required" />
+                <label>Password</label>
 
-              <label>Email</label>
+                <input
+                    name="password"
+                    type="password"
+                    minlength="8"
+                    ng-model="ctrl.password"
+                    required="required"/>
 
-              <input
-                  name="email"
-                  type="email"
-                  minlength="2"
-                  ng-model="ctrl.email"
-                  required="required" />
-          </form>
-      </div>
-  </div>
+                <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                    <div ng-message="required">Password is required!</div>
+                    <div ng-message="minlength">Must be more than 8 characters!</div>
+                </div>
+
+                <label>Email</label>
+
+                <input
+                    name="email"
+                    type="email"
+                    minlength="2"
+                    ng-model="ctrl.email"
+                    required="required" />
+
+                <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                    <div ng-message="required">Email is required!</div>
+                    <div ng-message="minlength">Must be more than 2 characters!</div>
+                    <div ng-message="email">Must be a valid email!</div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/FormController.js></script>"
+    <script src="js/app/controllers/FormController.js"></script>
 
 </body>
 </html>
