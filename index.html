@@ -76,18 +76,18 @@
 
               <label>Email</label>
 
-              <input
-                  name="email"
-                  type="email"
-                  minlength="2"
-                  ng-model="ctrl.email"
-                  required="required" />
-
-              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+            <input
+                name="email"
+                type="email"
+                ng-model="ctrl.email"
+                minlength="2"
+                required="required" />
+         
+            <div ng-messages="form.email.$error" ng-if="form.email.$touched">
                 <div ng-message="required">Email is required!</div>
                 <div ng-message="minlength">Must be more than 2 characters!</div>
                 <div ng-message="email">Must be a valid email!</div>
-              </div>
+            </div>
           </form>
       </div>
   </div>
@@ -95,7 +95,7 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/FormController.js></script>"
+    <script src="js/app/controllers/FormController.js"></script>
 
 </body>
 </html>
