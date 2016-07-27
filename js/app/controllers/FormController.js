@@ -1,5 +1,4 @@
 function FormController($scope) {
-
 }
 
 angular
