@@ -55,6 +55,16 @@
                   ng-model="ctrl.username"
                   required="required" />
 
+                  <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                    <div ng-message="minlength">
+                      Should be at least 2 characters
+                    </div>
+
+                    <div ng-message="required">
+                      required
+                    </div>
+                  </div>
+
               <label>Password</label>
 
               <input
@@ -64,6 +74,22 @@
                   ng-model="ctrl.password"
                   required="required" />
 
+                  <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+
+                    <div ng-message="required">
+                      required
+                    </div>
+
+                    <div ng-message="minlength">
+                      SHould be at least 8 chars.
+                    </div>
+
+                    <div ng-message="password">
+                      Should be password.
+                    </div>
+
+                  </div>
+
               <label>Email</label>
 
               <input
@@ -72,6 +98,22 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+
+                  <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+
+                    <div ng-message="required">
+                      required
+                    </div>
+
+                    <div ng-message="email">
+                      should be valid!
+                    </div>
+
+                    <div ng-message="minlength">
+                      should be at least 2
+                    </div>
+                  </div>
+
           </form>
       </div>
   </div>
@@ -80,6 +122,5 @@
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
     <script src="js/app/controllers/FormController.js"></script>"
-
 </body>
 </html>
