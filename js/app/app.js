@@ -1,2 +1,2 @@
 angular
-    .module('app', [ngMessages]);
+    .module('app', ['ngMessages']);
