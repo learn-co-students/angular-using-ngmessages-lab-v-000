@@ -55,6 +55,11 @@
                   ng-model="ctrl.username"
                   required="required" />
 
+              <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                <div ng-message="required">Username is required.</div>
+                <div ng-message="minlength">Username should be at least 2 characters long.</div>
+              </div>
+
               <label>Password</label>
 
               <input
@@ -64,6 +69,11 @@
                   ng-model="ctrl.password"
                   required="required" />
 
+              <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                <div ng-message="required">Password is required.</div>
+                <div ng-message="minlength">Password should be at least 8 characters long.</div>
+              </div>
+
               <label>Email</label>
 
               <input
@@ -72,6 +82,12 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+
+              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                <div ng-message="required">Email is required.</div>
+                <div ng-message="email">Email should be a valid format <em>(sample@email.com)</em>.</div>
+              </div>
+
           </form>
       </div>
   </div>
