@@ -84,6 +84,7 @@
                   required="required" />
 
                   <div ng-messages="form.email.$error">
+                    <div ng-message="email">Please provide valid email.</div>
                     <div ng-message="required">Email is required.</div>
                     <div ng-message="minlength">Minimum length is 2 characters.</div>
                   </div>
