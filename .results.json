@@ -1,0 +1,83 @@
+[
+  {
+    "description": "Events Test Username should make sure the username is required",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 677
+  },
+  {
+    "description": "Events Test Username should make sure the username is more than 2 characters",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 132
+  },
+  {
+    "description": "Events Test Username should not say anything when valid",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 110
+  },
+  {
+    "description": "Events Test Password should make sure the password is required",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 224
+  },
+  {
+    "description": "Events Test Password should make sure the password is more than 8 characters",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 110
+  },
+  {
+    "description": "Events Test Password should not say anything when valid",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 124
+  },
+  {
+    "description": "Events Test Email should make sure the email is required",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 209
+  },
+  {
+    "description": "Events Test Email should make sure the email is valid",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 111
+  },
+  {
+    "description": "Events Test Email should not say anything when valid",
+    "assertions": [
+      {
+        "passed": true
+      }
+    ],
+    "duration": 132
+  }
+]
