@@ -43,7 +43,7 @@
 <body>
 
   <div ng-app="app" class="app">
-      <div ng-controller="FormController as ctrl">
+      <div >
           <h5>Register</h5>
 
           <form name="form">
@@ -51,9 +51,14 @@
 
               <input
                   name="username"
+                  type="text"
                   minlength="2"
                   ng-model="ctrl.username"
                   required="required" />
+              <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                <div ng-message="required">A username is required!</div>
+                <div ng-message="minlength">username must be at least 2 characters!</div>
+              </div>
 
               <label>Password</label>
 
@@ -63,6 +68,10 @@
                   minlength="8"
                   ng-model="ctrl.password"
                   required="required" />
+              <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                <div ng-message="required">A password is required!</div>
+                <div ng-message="minlength">password must be at least 8 characters!</div>
+              </div>
 
               <label>Email</label>
 
@@ -72,6 +81,11 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                <div ng-message="required">A email is required!</div>
+                <div ng-message="minlength">email must be at least 2 characters!</div>
+                <div ng-message="email">Please enter a valid email!</div>
+              </div>
           </form>
       </div>
   </div>
