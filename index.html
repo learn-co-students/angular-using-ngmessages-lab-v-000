@@ -47,6 +47,7 @@
           <h5>Register</h5>
 
           <form name="form">
+            <div>
               <label>Username</label>
 
               <input
@@ -55,6 +56,14 @@
                   ng-model="ctrl.username"
                   required="required" />
 
+              <div ng-messages="form.username.$error" ng-if="form.username.$touched">
+                <div ng-message="minlength">Too short: should more than 2 char</div>
+                <div ng-message="required">Is required</div>
+              </div>  
+
+            </div>    
+
+            <div>
               <label>Password</label>
 
               <input
@@ -64,6 +73,15 @@
                   ng-model="ctrl.password"
                   required="required" />
 
+              <div ng-messages="form.password.$error" ng-if="form.password.$touched">
+                <div ng-message="minlength">Too short: should more than 8 chart</div>
+                <div ng-message="required">Is required</div>
+              </div>    
+
+            </div>
+
+            <div>     
+
               <label>Email</label>
 
               <input
@@ -72,6 +90,14 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+
+              <div ng-messages="form.email.$error" ng-if="form.email.$touched">
+                <div ng-message="minlength">Too short: should more than 2 char </div>
+                <div ng-message="required">Is required</div>
+                <div ng-message="email">Is not valid</div>
+              </div>    
+
+            </div>      
           </form>
       </div>
   </div>
@@ -79,7 +105,6 @@
     <script src="js/angular.js"></script>
     <script src="js/angular-messages.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/controllers/FormController.js"></script>"
-
+    <script src="js/app/controllers/FormController.js"></script>
 </body>
 </html>
