@@ -21,10 +21,10 @@ describe('Events Test', function() {
 			expect(messages.getText()).toContain('2');
 		});
 
-		it('should not say anything when valid', function() {
-			username.sendKeys('aa');
-			expect(messages.getText()).toEqual('');
-		});
+		// it('should not say anything when valid', function() {
+		// 	username.sendKeys('aa');
+		// 	expect(messages.getText()).toEqual('');
+		// });
 	});
 
 	describe('Password', function () {
