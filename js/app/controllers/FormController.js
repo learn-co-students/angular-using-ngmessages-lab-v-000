@@ -3,5 +3,5 @@ function FormController($scope) {
 }
 
 angular
-    .module('app')
+    .module('app', ['ngMessages'])
     .controller('FormController', FormController);
