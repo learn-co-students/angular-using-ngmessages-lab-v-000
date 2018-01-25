@@ -47,14 +47,19 @@
           <h5>Register</h5>
 
           <form name="form">
+            <div>
               <label>Username</label>
-
               <input
                   name="username"
                   minlength="2"
                   ng-model="ctrl.username"
                   required="required" />
-
+              <div ng-messages="form.username.$error">
+                <div ng-message="required">Username is required</div>
+                <div ng-message="minlength">Username should be at least 2 characters</div>
+              </div>
+            </div>
+            <div>
               <label>Password</label>
 
               <input
@@ -63,7 +68,12 @@
                   minlength="8"
                   ng-model="ctrl.password"
                   required="required" />
-
+               <div ng-messages="form.password.$error">
+                <div ng-message="required">Password is required</div>
+                <div ng-message="minlength">Minimum length is 8 characters </div>
+              </div>
+            </div>
+            <div>
               <label>Email</label>
 
               <input
@@ -72,6 +82,12 @@
                   minlength="2"
                   ng-model="ctrl.email"
                   required="required" />
+               <div ng-messages="form.email.$error">
+                <div ng-message="required">Email is required</div>
+                <div ng-message="minlength">Minimum length is 2 characters </div>
+                 <div ng-message="email">Email is not valid!</div>
+              </div>
+            </div>
           </form>
       </div>
   </div>
